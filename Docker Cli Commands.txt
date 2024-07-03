@@ -1,0 +1,128 @@
+Docker Cli Commands
+——————————————————
+
+Docker Hub
+———————
+#login to docker
+Docker login -u <user_name>
+
+#pushing image
+Docker push <image_name>
+
+#pulling image
+Docker pull <image_name>
+
+#searching image
+Docker search <image_name>
+
+
+Docker Image
+————————
+#building image
+Docker build -t <image_name>
+
+#building image without cache
+Docker build -t <image_name> . -no-cache
+
+#listing images
+Docker images
+
+#deleting images
+Docker rmi <image_name>
+
+#deleting unused images
+Docker image prune
+
+#tag an image
+Docker tag <image_name> <new_image_name>
+
+#creating  image out of container
+Docker commit <container_name>
+
+#saving image into file
+Docker save <image_name> > <file_name>
+
+#loading image from file
+Docker load -I <file_name>
+
+
+
+
+
+Docker Container
+—————————
+#creating & running a container
+Docker run <image_name>
+
+#creating & running a container with a specific name
+Docker run --name <container_name> <image_name>
+
+#running a container in background
+Docker run -d <image_name>
+
+#running container with a specific container port
+Docker run -p <host_port>:<container_port> <image_name>
+
+#starting a container
+Docker start <container_name>
+
+#stopping a container
+Docker stop <container_name>
+
+#listing working containers
+Docker ps
+Docker container ls
+
+#listing all the containers including not working
+Docker ps -a
+Docker ps -all
+
+#removing a stopped container
+Docker rm <container_name>
+
+#removing a running container
+Docker rm -f <container_name>
+
+#opening shell in a container
+Docker exec -it <container_name> sh
+Docker exec -it <container_name> bash
+
+#fetching logs
+Docker logs -f <container_name>
+
+#inspecting a container
+Docker inspect <container_name>
+
+#view stats
+Docker container stats
+
+#copying a file from container to host
+Docker cp <container_name>:<source> <target>
+
+#copying a file from host to container
+Docker cp <target> <container_name>:<source>
+
+#renaming container
+Docker rename <old_name> <new_name>
+
+#showing modified files in container
+Docker diff <container_name>
+
+#showing mapped ports in container
+Docker port <container_name>
+
+
+Docker General
+—————————
+#starting daemon
+Docker -d
+
+#getting help
+Docker —help
+
+#displayiing info
+Docker info
+
+#displaying docker version
+Docker version
+
